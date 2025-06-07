@@ -1,97 +1,146 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# minimart App
 
-# Getting Started
+![App Screenshot](https://raw.githubusercontent.com/talk2mat2/Martins_c/master/phone1.png)
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
-## Step 1: Start Metro
+This project is a React Native CLI application built for both **iOS** and **Android** platforms.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🛠 Requirements
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Ensure the following dependencies are installed:
 
-```sh
-# Using npm
-npm start
+### Global Dependencies
 
-# OR using Yarn
-yarn start
+- [Node.js](https://nodejs.org/) (Recommended: LTS version)
+- [Yarn](https://classic.yarnpkg.com/lang/en/) or npm
+- [React Native CLI](https://reactnative.dev/docs/environment-setup)
+
+```bash
+npm install -g react-native-cli
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Android Setup
+
+- [Android Studio](https://developer.android.com/studio)
+- Android SDK and emulator
+- Configure `ANDROID_HOME` environment variable
+
+```bash
+# Add to ~/.bash_profile or ~/.zshrc
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+Ensure an emulator is installed via AVD Manager or connect a physical device via USB.
+
+---
+
+### iOS Setup (macOS only)
+
+- macOS with [Xcode](https://developer.apple.com/xcode/) installed
+- [CocoaPods](https://cocoapods.org/) (for iOS dependencies)
+
+```bash
+sudo gem install cocoapods
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
+
+### 2. Install dependencies
+
+```bash
+yarn install
+# or
+npm install
+```
+
+### 3. iOS Setup
+
+```bash
+cd ios
+pod install
+cd ..
+```
+
+## 📱 Running the App
 
 ### Android
 
-```sh
-# Using npm
-npm run android
+Make sure an Android emulator is running or a device is connected.
 
-# OR using Yarn
-yarn android
+```bash
+npx react-native run-android
 ```
 
 ### iOS
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Run only on macOS with Xcode and CocoaPods installed:
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+npx react-native run-ios
 ```
 
-Then, and every time you update your native dependencies, run:
+You can also open the project in Xcode via:
 
-```sh
-bundle exec pod install
+```bash
+open ios/YourApp.xcworkspace
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+And hit the Run ▶️ button in Xcode.
 
-```sh
-# Using npm
-npm run ios
+---
 
-# OR using Yarn
-yarn ios
+## 🧪 Troubleshooting
+
+- **Metro bundler not running?**
+
+```bash
+npx react-native start
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+- **Build failed on Android?**
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Try cleaning the build:
 
-## Step 3: Modify your app
+```bash
+cd android && ./gradlew clean && cd ..
+```
 
-Now that you have successfully run the app, let's make changes!
+- **Build failed on iOS?**
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Ensure CocoaPods are installed, then run:
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+```bash
+cd ios && pod install && cd ..
+```
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+---
 
-## Congratulations! :tada:
+## 📂 Project Structure
 
-You've successfully run and modified your React Native App. :partying_face:
+```
+.
+├── android/      # Android native code
+├── ios/          # iOS native code
+├── src/          # Your JavaScript/TypeScript source files
+├── App.js
+└── package.json
+```
 
-### Now what?
+---
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## 📃 License
 
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+[MIT](LICENSE)
