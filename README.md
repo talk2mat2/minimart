@@ -54,17 +54,15 @@ sudo gem install cocoapods
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/talk2mat2/minimart.git
+cd Minimart
 ```
 
 ### 2. Install dependencies
 
 ```bash
 yarn install
-# or
-npm install
-```
+
 
 ### 3. iOS Setup
 
@@ -95,7 +93,7 @@ npx react-native run-ios
 You can also open the project in Xcode via:
 
 ```bash
-open ios/YourApp.xcworkspace
+open ios/Minimart.xcworkspace
 ```
 
 And hit the Run ▶️ button in Xcode.
